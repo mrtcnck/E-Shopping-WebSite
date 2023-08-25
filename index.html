@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- linkler -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+
+    <title>Online Alışveriş Sepeti</title>
+  </head>
+  <body>
+    <!-- nav başlangıcı -->
+    <nav class="d-flex justify-content-around align-items-center">
+      <div
+        class="d-flex justify-content-center align-items-center nav-logo w-25"
+      >
+        <a href="index.html" class="text-decoration-none text-center">
+          <img src="./assets/img/logo.png" alt="" />
+          <p class="m-0">Online Alışveriş Sepeti</p>
+        </a>
+      </div>
+      <div class="d-flex gap-3 justify-content-center align-items-center w-25">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input
+          type="text"
+          class="form-control"
+          id="search"
+          name="search"
+          oninput="searchLetter()"
+        />
+      </div>
+      <div class="d-flex gap-5 justify-content-center align-items-center w-25">
+        <div
+          class="d-flex flex-column justify-content-center align-items-center"
+        >
+          <p class="m-1">Üye Hesabım</p>
+          <div>
+            <button class="btn btn-outline-light">Giriş Yap</button>
+            <button class="btn btn-outline-light">Kayıt Ol</button>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column justify-content-center align-items-center"
+        >
+          <a href="sepet.html" class="text-decoration-none text-center">
+            <p class="m-1">Sepetim</p>
+            <button class="btn btn-outline-light">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <!-- nav sonu -->
+    <!-- main başlangıcı  -->
+    <main class="d-flex">
+      <!-- aside başlangıcı -->
+      <aside id="aside" class="w-25 d-flex flex-column gap-2">
+        <button
+          onclick="filterCategory()"
+          class="w-100 btn btn-light p-3 d-flex justify-content-between align-items-center"
+        >
+          <div class="d-flex gap-2 align-items-center">
+            <i class="fa-solid fa-grip-lines"></i>
+            <p class="m-0">Giyim & Ayakkabı</p>
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <button
+          onclick="filterCategory1()"
+          class="w-100 btn btn-light p-3 d-flex justify-content-between align-items-center"
+        >
+          <div class="d-flex gap-2 align-items-center">
+            <i class="fa-solid fa-grip-lines"></i>
+            <p class="m-0">Elektronik</p>
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <button
+          onclick="filterCategory2()"
+          class="w-100 btn btn-light p-3 d-flex justify-content-between align-items-center"
+        >
+          <div class="d-flex gap-2 align-items-center">
+            <i class="fa-solid fa-grip-lines"></i>
+            <p class="m-0">Ev & Yaşam</p>
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <button
+          onclick="filterCategory3()"
+          class="w-100 btn btn-light p-3 d-flex justify-content-between align-items-center"
+        >
+          <div class="d-flex gap-2 align-items-center">
+            <i class="fa-solid fa-grip-lines"></i>
+            <p class="m-0">Anne & Bebek</p>
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <button
+          onclick="filterCategory4()"
+          class="w-100 btn btn-light p-3 d-flex justify-content-between align-items-center"
+        >
+          <div class="d-flex gap-2 align-items-center">
+            <i class="fa-solid fa-grip-lines"></i>
+            <p class="m-0">Kozmetik & Kişisel Bakım</p>
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <button
+          onclick="filterCategory5()"
+          class="w-100 p-3 btn btn-light d-flex justify-content-between align-items-center"
+        >
+          <div class="d-flex gap-2 align-items-center">
+            <i class="fa-solid fa-grip-lines"></i>
+            <p class="m-0">Mücevher & Saat</p>
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <button
+          onclick="filterCategory6()"
+          class="w-100 p-3 btn btn-light d-flex justify-content-between align-items-center"
+        >
+          <div class="d-flex gap-2 align-items-center">
+            <i class="fa-solid fa-grip-lines"></i>
+            <p class="m-0">Spor & Outdoor</p>
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <button
+          onclick="filterCategory7()"
+          class="w-100 p-3 btn btn-light d-flex justify-content-between align-items-center"
+        >
+          <div class="d-flex gap-2 align-items-center">
+            <i class="fa-solid fa-grip-lines"></i>
+            <p class="m-0">Kitap, Müzik, Film, Oyun</p>
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <button
+          onclick="filterCategory8()"
+          class="w-100 btn btn-light p-3 d-flex justify-content-between align-items-center"
+        >
+          <div class="d-flex gap-2 align-items-center">
+            <i class="fa-solid fa-grip-lines"></i>
+            <p class="m-0">Otomotiv & Motosiklet</p>
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </aside>
+      <!-- aside sonu  -->
+      <!-- section başlangıcı -->
+      <section id="urunlerMain" class="w-75">
+        <p class="display-6 text-center">Ürünler</p>
+        <div
+          id="shoppingCards"
+          class="d-flex flex-wrap justify-content-center align-items-center gap-5 shoppingCards"
+        >
+        </div>
+      </section>
+      <!-- section sonu -->
+    </main>
+    <footer class="d-flex justify-content-around align-items-center w-100">
+      <div
+        class="footerProps d-flex justify-content-center align-items-center w-50"
+      >
+        <div
+          class="footerProp d-flex flex-column justify-content-center align-items-center"
+        >
+          <p>Yarın Kapında</p>
+          <img src="./assets/img/kargo.png" alt="" />
+        </div>
+        <div
+          class="footerProp d-flex flex-column justify-content-center align-items-center"
+        >
+          <p>Tek Tıkla Güvenli Alışveriş</p>
+          <img src="./assets/img/tikla.png" alt="" />
+        </div>
+        <div
+          class="footerProp d-flex flex-column justify-content-center align-items-center"
+        >
+          <p>Kapında İade</p>
+          <img src="./assets/img/iade.png" alt="" />
+        </div>
+      </div>
+    </footer>
+    <!-- main sonu  -->
+    <script src="./assets/js/script.js" defer></script>
+  </body>
+</html>
